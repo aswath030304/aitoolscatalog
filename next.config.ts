@@ -1,16 +1,13 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   experimental: {
-    // Disable Next.js TypeScript rewriting & plugin injection
-    disableExperimentalReactTypeScriptTransform: true,
     typedRoutes: false,
     serverActions: false,
   },
 
-  webpack(config) {
+  webpack: (config) => {
     return config;
   }
 };
 
-export default nextConfig;
+module.exports = nextConfig;
