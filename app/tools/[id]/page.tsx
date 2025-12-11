@@ -1,31 +1,44 @@
 import { getToolById, getAllTools } from "../../../lib/data";
-import type { PageProps, Metadata } from "next";
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 
+// SSG paths
 export function generateStaticParams() {
   return getAllTools().map((tool) => ({
     id: tool.id,
   }));
 }
 
+// SEO metadata
 export async function generateMetadata({
   params,
-}: PageProps<{ id: string }>): Promise<Metadata> {
+}: {
+  params: { id: string };
+}): Promise<Metadata> {
   const tool = getToolById(params.id);
+
   if (!tool) {
-    return { title: "Not Found", description: "Tool not found" };
+    return {
+      title: "Not Found",
+      description: "Tool not found",
+    };
   }
+
   return {
     title: tool.name,
     description: tool.description,
   };
 }
 
-export default function ToolPage({
+// PAGE COMPONENT — NO PageProps TYPE ANYWHERE
+export default function ToolDetailPage({
   params,
-}: PageProps<{ id: string }>) {
+}: {
+  params: { id: string };
+}) {
   const tool = getToolById(params.id);
 
-  if (!tool) return <div>Tool not found</div>;
+  if (!tool) return notFound();
 
   return (
     <div>
