@@ -1,24 +1,24 @@
 import { getToolById, getAllTools } from "../../../lib/data";
 import { notFound } from "next/navigation";
-import type { Metadata } from "next";
 
 export const revalidate = 60;
 
-// SSG paths
+// ✔ SSG paths
 export function generateStaticParams() {
-  return getAllTools().map((tool) => ({ id: tool.id }));
+  return getAllTools().map((tool) => ({
+    id: tool.id,
+  }));
 }
 
-// SEO metadata
-export async function generateMetadata({
-  params,
-}: {
-  params: { id: string };
-}): Promise<Metadata> {
+// ✔ No Metadata import (Next.js 14 does NOT export it)
+export async function generateMetadata({ params }: { params: { id: string } }) {
   const tool = getToolById(params.id);
 
   if (!tool) {
-    return { title: "AI Tool Not Found", description: "This tool does not exist." };
+    return {
+      title: "AI Tool Not Found",
+      description: "This tool does not exist.",
+    };
   }
 
   return {
@@ -27,12 +27,7 @@ export async function generateMetadata({
   };
 }
 
-// Page Component
-export default function ToolDetailPage({
-  params,
-}: {
-  params: { id: string };
-}) {
+export default function ToolDetailPage({ params }: { params: { id: string } }) {
   const tool = getToolById(params.id);
 
   if (!tool) return notFound();
@@ -47,6 +42,7 @@ export default function ToolDetailPage({
             alt={tool.name}
             className="w-28 h-28 rounded-2xl border border-slate-700 shadow-lg"
           />
+
           <div>
             <h1 className="text-5xl font-extrabold bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
               {tool.name}
@@ -72,12 +68,16 @@ export default function ToolDetailPage({
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12">
           <div className="p-6 bg-slate-900/50 border border-slate-800 rounded-2xl shadow-lg">
             <h3 className="text-sm text-slate-400">Pricing</h3>
-            <p className="text-2xl font-bold text-purple-400 mt-2">{tool.pricing}</p>
+            <p className="text-2xl font-bold text-purple-400 mt-2">
+              {tool.pricing}
+            </p>
           </div>
 
           <div className="p-6 bg-slate-900/50 border border-slate-800 rounded-2xl shadow-lg">
             <h3 className="text-sm text-slate-400">Rating</h3>
-            <p className="text-2xl font-bold text-yellow-400 mt-2">⭐ {tool.rating}</p>
+            <p className="text-2xl font-bold text-yellow-400 mt-2">
+              ⭐ {tool.rating}
+            </p>
           </div>
         </div>
 
@@ -99,8 +99,12 @@ export default function ToolDetailPage({
         )}
 
         {(() => {
-          const related = getAllTools().filter((t) => t.category === tool.category && t.id !== tool.id).slice(0, 4);
+          const related = getAllTools()
+            .filter((t) => t.category === tool.category && t.id !== tool.id)
+            .slice(0, 4);
+
           if (related.length === 0) return null;
+
           return (
             <div className="mt-12">
               <h3 className="text-xl font-semibold">You might also like</h3>
@@ -112,10 +116,18 @@ export default function ToolDetailPage({
                     className="p-3 rounded-lg bg-slate-900/40 border border-slate-800 hover:border-purple-500/60 transition-transform transform hover:-translate-y-1"
                   >
                     <div className="flex items-center gap-3">
-                      <img src={t.logo || "/images/placeholder.png"} alt={t.name} className="w-10 h-10 rounded-md object-cover" />
+                      <img
+                        src={t.logo || "/images/placeholder.png"}
+                        alt={t.name}
+                        className="w-10 h-10 rounded-md object-cover"
+                      />
                       <div>
-                        <div className="font-medium text-slate-100">{t.name}</div>
-                        <div className="text-sm text-slate-400">{t.category}</div>
+                        <div className="font-medium text-slate-100">
+                          {t.name}
+                        </div>
+                        <div className="text-sm text-slate-400">
+                          {t.category}
+                        </div>
                       </div>
                     </div>
                   </a>
