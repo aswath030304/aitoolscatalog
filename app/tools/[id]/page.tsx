@@ -8,20 +8,29 @@ export function generateStaticParams() {
   return getAllTools().map((tool) => ({ id: tool.id }));
 }
 
-export async function generateMetadata({ params }: { params: { id: string } | Promise<{ id: string }> }): Promise<Metadata> {
-  const { id } = (await params) as { id: string };
-  const tool = getToolById(id);
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string };
+}): Promise<Metadata> {
+  const tool = getToolById(params.id);
 
   if (!tool) {
     return { title: "AI Tool Not Found", description: "This tool does not exist." };
   }
 
-  return { title: `${tool.name} — AI Tool Details`, description: tool.description };
+  return {
+    title: `${tool.name} — AI Tool Details`,
+    description: tool.description,
+  };
 }
 
-export default async function ToolDetailPage({ params }: { params: { id: string } | Promise<{ id: string }> }) {
-  const { id } = (await params) as { id: string };
-  const tool = getToolById(id);
+export default function ToolDetailPage({
+  params,
+}: {
+  params: { id: string };
+}) {
+  const tool = getToolById(params.id);
 
   if (!tool) return notFound();
 
@@ -41,7 +50,9 @@ export default async function ToolDetailPage({ params }: { params: { id: string 
               {tool.name}
             </h1>
             <p className="text-slate-400 text-lg mt-2">{tool.category}</p>
-            <p className="mt-3 text-slate-300">Quick take: {tool.description.split(".")[0] || tool.description}</p>
+            <p className="mt-3 text-slate-300">
+              Quick take: {tool.description.split(".")[0] || tool.description}
+            </p>
           </div>
         </div>
 
@@ -85,10 +96,13 @@ export default async function ToolDetailPage({ params }: { params: { id: string 
           </div>
         )}
 
-        {/* Related tools — show a few other items from the same category */}
         {(() => {
-          const related = getAllTools().filter((t) => t.category === tool.category && t.id !== tool.id).slice(0, 4);
+          const related = getAllTools()
+            .filter((t) => t.category === tool.category && t.id !== tool.id)
+            .slice(0, 4);
+
           if (related.length === 0) return null;
+
           return (
             <div className="mt-12">
               <h3 className="text-xl font-semibold">You might also like</h3>
@@ -100,7 +114,11 @@ export default async function ToolDetailPage({ params }: { params: { id: string 
                     className="p-3 rounded-lg bg-slate-900/40 border border-slate-800 hover:border-purple-500/60 transition-transform transform hover:-translate-y-1"
                   >
                     <div className="flex items-center gap-3">
-                      <img src={t.logo || "/images/placeholder.png"} alt={t.name} className="w-10 h-10 rounded-md object-cover" />
+                      <img
+                        src={t.logo || "/images/placeholder.png"}
+                        alt={t.name}
+                        className="w-10 h-10 rounded-md object-cover"
+                      />
                       <div>
                         <div className="font-medium text-slate-100">{t.name}</div>
                         <div className="text-sm text-slate-400">{t.category}</div>
