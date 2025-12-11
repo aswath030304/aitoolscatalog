@@ -1,0 +1,178 @@
+[
+  {
+    "id": "chatgpt",
+    "name": "ChatGPT",
+    "category": "Text Generation",
+    "pricing": "Freemium",
+  "description": "AI assistant for conversation, reasoning, and writing powered by GPT models. ChatGPT helps draft emails, brainstorm ideas, debug code, explain concepts, and hold multi-turn conversations with context-aware responses. It's useful for both casual users and professionals looking to accelerate writing and research tasks.",
+    "website": "https://chat.openai.com",
+    "logo": "/images/chatgpt.png",
+    "tags": ["chat", "assistant", "writing"],
+    "rating": 4.9
+  },
+  {
+    "id": "claude",
+    "name": "Claude",
+    "category": "Text Generation",
+    "pricing": "Freemium",
+  "description": "Anthropic’s conversational model known for safety, reasoning and long context. Claude focuses on delivering thoughtful, safe answers and is tuned for clarity over verbosity. Many users rely on it for research summaries, thoughtful editing, and long-form assistance.",
+    "website": "https://claude.ai",
+    "logo": "/images/claude.png",
+    "tags": ["chat", "assistant", "analysis"],
+    "rating": 4.8
+  },
+  {
+    "id": "gemini",
+    "name": "Google Gemini",
+    "category": "Text Generation",
+    "pricing": "Freemium",
+  "description": "Google’s multimodal AI for reasoning, code, images and real-time search. Gemini can fuse text, images, and code understanding to assist with complex problem solving, and integrates with Google's search and knowledge systems for up-to-date information.",
+    "website": "https://gemini.google.com",
+    "logo": "/images/gemini.png",
+    "tags": ["chat", "multimodal", "research"],
+    "rating": 4.7
+  },
+  {
+    "id": "perplexity",
+    "name": "Perplexity AI",
+    "category": "Search & Research",
+    "pricing": "Freemium",
+  "description": "AI-powered search engine that gives cited, real-time researched answers. Perplexity is designed to surface sources and references alongside concise answers, making it handy when you need quick, sourced information or a jumping-off point for deeper reading.",
+    "website": "https://perplexity.ai",
+    "logo": "/images/perplexity.png",
+    "tags": ["search", "research", "answers"],
+    "rating": 4.8
+  },
+  {
+    "id": "midjourney",
+    "name": "Midjourney",
+    "category": "Image Generation",
+    "pricing": "Paid",
+  "description": "AI tool that generates high-quality artistic images from text prompts. Midjourney is popular among artists and designers for its distinctive aesthetic, strong style controls, and active community sharing prompt techniques and refinements.",
+    "website": "https://midjourney.com",
+    "logo": "/images/midjourney.png",
+    "tags": ["image", "art", "creative"],
+    "rating": 4.9
+  },
+  {
+    "id": "dalle-3",
+    "name": "DALL·E 3",
+    "category": "Image Generation",
+    "pricing": "Freemium",
+  "description": "OpenAI’s photorealistic image generation model tightly integrated with ChatGPT. DALL·E 3 specializes in translating detailed prompts into photorealistic or stylized images and benefits from contextual clarifications when combined with chat workflows.",
+    "website": "https://openai.com/dall-e-3",
+    "logo": "/images/dalle3.png",
+    "tags": ["image", "creative", "photorealistic"],
+    "rating": 4.8
+  },
+  {
+    "id": "stable-diffusion",
+    "name": "Stable Diffusion",
+    "category": "Image Generation",
+    "pricing": "Open Source",
+  "description": "Open-source image generation model used for custom workflows and apps. Stable Diffusion's flexibility and community ecosystem make it ideal for experimentation, fine-tuning, and integrating into production pipelines.",
+    "website": "https://stability.ai",
+    "logo": "/images/sd.png",
+    "tags": ["image", "open-source", "custom"],
+    "rating": 4.7
+  },
+  {
+    "id": "leonardo-ai",
+    "name": "Leonardo AI",
+    "category": "Image Generation",
+    "pricing": "Freemium",
+  "description": "Easy-to-use creative image generation platform with templates & styles. Leonardo AI targets creators who want fast iteration, presets, and community-shared assets to speed up idea-to-image workflows.",
+    "website": "https://leonardo.ai",
+    "logo": "/images/leonardo.png",
+    "tags": ["image", "art", "templates"],
+    "rating": 4.6
+  },
+  {
+    "id": "runway-ml",
+    "name": "Runway ML",
+    "category": "Video Generation",
+    "pricing": "Paid",
+  "description": "Industry-leading AI video editing and generation toolkit. Runway ML provides powerful tools for creators to generate, edit, and composite video using AI-assisted workflows, lowering the barrier for complex visual effects.",
+    "website": "https://runwayml.com",
+    "logo": "/images/runway.png",
+    "tags": ["video", "generation", "editing"],
+    "rating": 4.8
+  },
+  {
+    "id": "pika-labs",
+    "name": "Pika Labs",
+    "category": "Video Generation",
+    "pricing": "Free",
+  "description": "AI tool that generates short videos from text prompts. Pika Labs is built for quick experimentational clips and creative storytelling, with simple controls for motion and style.",
+    "website": "https://pika.art",
+    "logo": "/images/pika.png",
+    "tags": ["video", "creative", "animation"],
+    "rating": 4.7
+  },
+  {
+    "id": "suno",
+    "name": "Suno AI",
+    "category": "Music Generation",
+    "pricing": "Freemium",
+  "description": "AI model that generates full songs with vocals and lyrics. Suno AI enables composers and creators to prototype melodies, arrangements, and voice styles rapidly, making iterative music creation more accessible.",
+    "website": "https://suno.ai",
+    "logo": "/images/suno.png",
+    "tags": ["music", "audio", "generation"],
+    "rating": 4.9
+  },
+  {
+    "id": "elevenlabs",
+    "name": "ElevenLabs",
+    "category": "Voice Generation",
+    "pricing": "Freemium",
+  "description": "Leader in realistic voice cloning and text-to-speech. ElevenLabs focuses on natural-sounding speech, voice cloning fidelity, and fine-grained controls over tone and delivery for audiobooks, podcasts, and narration.",
+    "website": "https://elevenlabs.io",
+    "logo": "/images/elevenlabs.png",
+    "tags": ["voice", "tts", "cloning"],
+    "rating": 4.9
+  },
+  {
+    "id": "github-copilot",
+    "name": "GitHub Copilot",
+    "category": "Developer Tools",
+    "pricing": "Paid",
+  "description": "AI coding assistant that autocompletes code and suggests functions. GitHub Copilot integrates into editors to suggest context-aware completions, scaffold functions, and accelerate development workflows while learning from code patterns.",
+    "website": "https://github.com/features/copilot",
+    "logo": "/images/copilot.png",
+    "tags": ["code", "developer", "assistant"],
+    "rating": 4.9
+  },
+  {
+    "id": "cursor",
+    "name": "Cursor AI",
+    "category": "Developer Tools",
+    "pricing": "Freemium",
+  "description": "AI-powered coding editor that helps you write, edit, and refactor code. Cursor AI combines an intelligent editor with navigation and code understanding features to streamline dev tasks and exploratory coding.",
+    "website": "https://cursor.sh",
+    "logo": "/images/cursor.png",
+    "tags": ["coding", "developer", "editor"],
+    "rating": 4.8
+  },
+  {
+    "id": "codewhisperer",
+    "name": "Amazon CodeWhisperer",
+    "category": "Developer Tools",
+    "pricing": "Free",
+  "description": "AI pair programmer for Amazon and enterprise codebases. Amazon CodeWhisperer provides code recommendations tailored for AWS services and common enterprise patterns, helping teams move faster while observing security best practices.",
+    "website": "https://aws.amazon.com/codewhisperer",
+    "logo": "/images/codewhisperer.png",
+    "tags": ["code", "aws", "autocomplete"],
+    "rating": 4.5
+  },
+  {
+    "id": "notion-ai",
+    "name": "Notion AI",
+    "category": "Productivity",
+    "pricing": "Paid",
+  "description": "AI that writes, summarizes, translates and improves Notion documents. Notion AI assists with note-taking, content drafting, summarization, and transforming ideas into structured documents within Notion workspaces.",
+    "website": "https://notion.so/ai",
+    "logo": "/images/notion.png",
+    "tags": ["productivity", "writing", "summary"],
+    "rating": 4.6
+  }
+]

@@ -1,8 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  reactCompiler: true,
+  webpack(config) {
+    return config; // Enables Webpack automatically
+  },
 };
 
 export default nextConfig;
