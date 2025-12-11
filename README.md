@@ -1,52 +1,51 @@
 # AI Tools Catalog
 
-A modern, responsive, and SEO-optimized directory of AI tools built using **Next.js 16 (App Router)**, **React 19**, **TypeScript**, and **Tailwind CSS**.  
-This project showcases clean UI/UX, strong frontend engineering, dynamic routing, and production-ready structure using a static JSON dataset.
+A modern, responsive, and SEO-optimized directory of AI tools built using **Next.js 14 (App Router)**, **React 18**, **TypeScript**, and **Tailwind CSS**.  
+This project demonstrates clean UI/UX, structured frontend engineering, dynamic routing, and static generation using a JSON dataset.
 
 ---
 
 ## Features
 
 ### Search and Filtering
-- Fuzzy search powered by Fuse.js
-- Category-based filtering
-- Pricing filter (Free / Freemium / Paid)
-- Sorting by name and rating
-- Real-time client-side updates
+- Fuzzy search powered by Fuse.js  
+- Category-based filtering  
+- Pricing filters (Free, Freemium, Paid)  
+- Sorting options for name and rating  
+- Real-time client-side updates  
 
-### Dynamic Tool Pages (SSG)
-Each tool has a statically generated detail page:
-- Logo, name, category
-- Description
-- Pricing
-- Rating
-- Tags
-- External website link
-- SEO metadata via `generateMetadata()`
+### Dynamic Tool Pages (Static Site Generation)
+Each tool detail page includes:
+- Logo, name, category  
+- Full description  
+- Pricing information  
+- Rating  
+- Tags  
+- External website link  
+- SEO metadata via `generateMetadata()`  
 
-### UI & Experience
-- Fully responsive Tailwind CSS design
-- Smooth hover and transition effects
-- Reusable components (Header, Footer, ToolCard)
-- Clean, modern layout optimized for readability
+### User Interface and Experience
+- Fully responsive Tailwind CSS design  
+- Clean layout inspired by modern directory-style UI  
+- Reusable components (Header, Footer, ToolCard)  
+- Smooth transitions and hover effects  
 
 ---
 
 ## Tech Stack
 
-- **Next.js 16** (App Router, SSG, Metadata API)
-- **React 19**
-- **TypeScript**
-- **Tailwind CSS**
-- **Fuse.js** for fuzzy search
-- **Node.js** for static JSON handling
-- **Vercel** for deployment
+- **Next.js 14** (App Router, SSG, Metadata API)  
+- **React 18**  
+- **TypeScript**  
+- **Tailwind CSS**  
+- **Fuse.js** for fuzzy search  
+- **Static JSON dataset**  
+- **Netlify** for production deployment  
 
 ---
 
 ## Folder Structure
 
-## Folder Structure
 
 
 ai-tools-catalog/
@@ -78,13 +77,15 @@ ai-tools-catalog/
 │
 └── README.md
 
-## Installation & Setup
+
+---
+
+## Installation and Setup
 
 ### 1. Install dependencies
 ~~~bash
 npm install
 ~~~
-
 ### 2. Start development server
 ~~~bash
 npm run dev
@@ -101,34 +102,63 @@ npm start
 ~~~
 
 ---
+## Deployment (Netlify)
 
-## Deployment on Vercel
+1. Push the project to a GitHub repository.  
+2. Go to **https://netlify.com**  
+3. Click **Add New Site → Import from GitHub**  
+4. Choose your repository.  
+5. Netlify automatically detects **Next.js** and configures the build.  
+6. Click **Deploy**.  
 
-1. Push your project to a GitHub repository.  
-2. Visit: https://vercel.com  
-3. Click **Add New Project → Import GitHub Repository**  
-4. Select your AI Tools Catalog repository.  
-5. Configure settings:  
-   - **Framework Preset:** Next.js  
-   - **Build Output:** Static (auto-detected)  
-6. Click **Deploy**  
+Your project is now live on a global CDN.
 
-Your project will be deployed globally using Vercel’s CDN.
+---
+
+## Dataset: How It Was Created
+
+The dataset (`tools.json`) was prepared using publicly available information from:
+
+- Product Hunt  
+- There’s an AI For That  
+- Official tool websites  
+
+**Process followed:**
+
+1. Identified a list of popular AI tools  
+2. Collected details such as name, category, description, pricing, and logo  
+3. Cleaned, formatted, and standardized the data  
+4. Converted everything into a consistent JSON structure  
+5. Used TypeScript types to ensure accuracy and stability  
+
+No backend database was required — the entire site uses static JSON with SSG.
+
+---
+
+## Use of AI Tools in This Project
+
+AI tools were used **only for repetitive or time-saving tasks**, such as:
+
+- Formatting the dataset into JSON  
+- Auto-generating boilerplate TypeScript types  
+- Speeding up Tailwind CSS utility class suggestions  
+- Generating component scaffolding (e.g., basic layout or card structure)  
+
+All core logic, routing, filtering, and UI decisions were implemented manually.
 
 ---
 
 ## Project Summary
 
-The **AI Tools Catalog** is a modern, responsive, SEO-friendly web application featuring:
+The **AI Tools Catalog** is a responsive and clean application featuring:
 
-- Next.js 16 App Router with Static Site Generation  
-- React 19 + TypeScript  
+- Static Site Generation (SSG) with dynamic routing  
+- Search, filtering, and sorting capabilities  
 - Tailwind CSS responsive UI  
-- Fuzzy search (Fuse.js) with sorting and filtering  
-- Dynamic tool pages  
-- Clean, scalable folder structure  
+- Metadata API for SEO optimization  
+- Organized folder structure with reusable components  
 
-This project was created for the **RaftLabs Software Developer Intern Assessment**.
+Built as part of the **RaftLabs Software Developer Intern Assessment**.
 
 ---
 
