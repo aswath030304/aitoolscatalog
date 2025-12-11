@@ -1,15 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  webpack(config) {
-    return config;
-  },
-
   experimental: {
+    // Disable Next.js TypeScript rewriting & plugin injection
+    disableExperimentalReactTypeScriptTransform: true,
     typedRoutes: false,
     serverActions: false,
-    tsconfig: false, 
   },
+
+  webpack(config) {
+    return config;
+  }
 };
 
 export default nextConfig;
