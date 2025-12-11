@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata } from "next/types";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
@@ -11,8 +11,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "AI Tools Catalog",
-  description:
-    "Browse the best AI tools for text, image, code, research, audio, and more.",
+  description: "Browse the best AI tools for text, image, code, research, audio, and more."
 };
 
 export default function RootLayout({
@@ -22,16 +21,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} bg-slate-950 text-slate-100 antialiased`}
-      >
-        {/* Neon Header */}
+      <body className={`${inter.variable} bg-slate-950 text-slate-100 antialiased`}>
         <Header />
-
-        {/* Page Content */}
-        <main className="pt-24 max-w-6xl mx-auto px-6">{children}</main>
-
-        {/* Footer */}
+        <main className="pt-24 max-w-6xl mx-auto px-6">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
