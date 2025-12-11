@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "strict": false
+  },
+  "exclude": [
+    "node_modules",
+    ".next",
+    ".next/types",
+    ".next/dev",
+    "**/*.test.ts",
+    "**/*.spec.ts"
+  ]
+}
